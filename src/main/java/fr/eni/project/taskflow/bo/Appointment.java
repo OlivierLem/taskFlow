@@ -13,12 +13,12 @@ public class Appointment {
     private LocalDateTime dateCreate;
     private LocalDateTime dateUpdate;
     private String reference;
-    private User user;
+    private UUID userId;
 
     public Appointment() {}
 
     public Appointment(UUID id, String title, String description, String adress, LocalDateTime dateStart,
-            LocalDateTime dateEnd, LocalDateTime dateCreate, LocalDateTime dateUpdate, String reference, User user) {
+            LocalDateTime dateEnd, LocalDateTime dateCreate, LocalDateTime dateUpdate, String reference, UUID userId) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -28,7 +28,7 @@ public class Appointment {
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;
         this.reference = reference;
-        this.user = user;
+        this.userId = userId;
     }
 
     public UUID getId() {
@@ -103,15 +103,23 @@ public class Appointment {
         this.reference = reference;
     }
 
-    public User getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     
+    
+    @Override
+    public String toString() {
+        return "Appointment [id=" + id + ", title=" + title + ", description=" + description + ", adress=" + adress
+                + ", dateStart=" + dateStart + ", dateEnd=" + dateEnd + ", dateCreate=" + dateCreate + ", dateUpdate="
+                + dateUpdate + ", reference=" + reference + ", userId=" + userId + "]";
+    }
+
     @Override
     public int hashCode() {
         return getClass().hashCode();

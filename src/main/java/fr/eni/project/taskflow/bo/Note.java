@@ -10,19 +10,19 @@ public class Note {
     private LocalDateTime dateCreate;
     private LocalDateTime dateUpdate;
     private String reference;
-    private User user;
+    private UUID userId;
 
     public Note() {}
 
     public Note(UUID id, String title, String content, LocalDateTime dateCreate, LocalDateTime dateUpdate,
-            String reference, User user) {
+            String reference, UUID userId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;
         this.reference = reference;
-        this.user = user;
+        this.userId = userId;
     }
 
     public UUID getId() {
@@ -73,18 +73,18 @@ public class Note {
         this.reference = reference;
     }
 
-    public User getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     @Override
     public String toString() {
         return "Note [id=" + id + ", title=" + title + ", content=" + content + ", dateCreate=" + dateCreate
-                + ", dateUpdate=" + dateUpdate + ", reference=" + reference + ", user=" + user + "]";
+                + ", dateUpdate=" + dateUpdate + ", reference=" + reference + ", userId=" + userId + "]";
     }
 
     @Override

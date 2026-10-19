@@ -1,6 +1,7 @@
 package fr.eni.project.taskflow.bo;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 public class Todolist {
@@ -10,19 +11,20 @@ public class Todolist {
     private LocalDateTime dateCreate;
     private LocalDateTime dateUpdate;
     private String reference;
-    private User user;
+    private UUID userId;
+
 
     public Todolist() {}
 
     public Todolist(UUID id, String title, LocalDateTime deadline, LocalDateTime dateCreate, LocalDateTime dateUpdate,
-            String reference, User user) {
+            String reference, UUID userId) {
         this.id = id;
         this.title = title;
         this.deadline = deadline;
         this.dateCreate = dateCreate;
         this.dateUpdate = dateUpdate;
         this.reference = reference;
-        this.user = user;
+        this.userId = userId;
     }
 
     public UUID getId() {
@@ -73,21 +75,21 @@ public class Todolist {
         this.reference = reference;
     }
 
-    public User getUser() {
-        return user;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
+    
 
     @Override
     public String toString() {
         return "Todolist [id=" + id + ", title=" + title + ", deadline=" + deadline + ", dateCreate=" + dateCreate
-                + ", dateUpdate=" + dateUpdate + ", reference=" + reference + ", user=" + user + "]";
+                + ", dateUpdate=" + dateUpdate + ", reference=" + reference + ", userId=" + userId + "]";
     }
 
-    
     @Override
     public int hashCode() {
         return getClass().hashCode();
